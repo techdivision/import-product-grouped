@@ -68,10 +68,7 @@ class ProductGroupedObserver extends AbstractProductImportObserver
             // 24-MB01=0.0000,24-MB04=0.0000,24-MB03=0.0000
             foreach ($this->explode($associatedSkus) as $grouped) {
                 // explode the SKU and the configurable attribute values, e. g. 24-MB04=0.0000
-                $explodedGrouped = $this->explode($grouped, '=');
-
-                // explode the variations child SKU
-                list ($childSku, ) = $this->explode($explodedGrouped, '=');
+                list ($childSku, ) = $this->explode($grouped, '=');
 
                 // initialize the product variation itself
                 $variation = $this->newArtefact(

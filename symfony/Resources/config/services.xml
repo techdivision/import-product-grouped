@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="import_product_grouped.processor.product.grouped" class="TechDivision\Import\Product\Grouped\Services\ProductGroupedProcessor">
+            <argument type="service" id="connection"/>
+            <argument type="service" id="import_product.repository.product.relation"/>
+            <argument type="service" id="import_product.action.product.relation"/>
+        </service>
+
+        <service id="import_product_grouped.observer.product.grouped" class="TechDivision\Import\Product\Grouped\Observers\ProductGroupedObserver"/>
+        <service id="import_product_grouped.observer.grouped.product.relation" class="TechDivision\Import\Product\Grouped\Observers\GroupedProductRelationObserver">
+            <argument type="service" id="import_product_grouped.processor.product.grouped"/>
+        </service>
+        <service id="import_product_grouped.observer.grouped.product.relation.update" class="TechDivision\Import\Product\Grouped\Observers\GroupedProductRelationUpdateObserver">
+            <argument type="service" id="import_product_grouped.processor.product.grouped"/>
+        </service>
+
+        <service id="import_product_grouped.subject.grouped" class="TechDivision\Import\Product\Grouped\Subjects\GroupedSubject" shared="false">
+            <argument type="service" id="import.processor.registry"/>
+            <argument type="service" id="import.generator.core.config.data.uid"/>
+            <argument type="service" id="loggers"/>
+            <argument type="service" id="import.events.emitter"/>
+        </service>
+
+    </services>
+
+</container>
