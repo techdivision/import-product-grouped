@@ -20,8 +20,8 @@
 
 namespace TechDivision\Import\Product\Grouped\Services;
 
+use TechDivision\Import\Actions\ActionInterface;
 use TechDivision\Import\Connection\ConnectionInterface;
-use TechDivision\Import\Product\Actions\ProductRelationActionInterface;
 use TechDivision\Import\Product\Repositories\ProductRelationRepositoryInterface;
 
 /**
@@ -48,12 +48,12 @@ class ProductGroupedProcessor implements ProductGroupedProcessorInterface
      *
      * @param \TechDivision\Import\Connection\ConnectionInterface                          $connection                The connection to use
      * @param \TechDivision\Import\Product\Repositories\ProductRelationRepositoryInterface $productRelationRepository The product relation repository to use
-     * @param \TechDivision\Import\Product\Actions\ProductRelationActionInterface          $productRelationAction     The product relation action to use
+     * @param \TechDivision\Import\Actions\ActionInterface                                 $productRelationAction     The product relation action to use
      */
     public function __construct(
         ConnectionInterface $connection,
         ProductRelationRepositoryInterface $productRelationRepository,
-        ProductRelationActionInterface $productRelationAction
+        ActionInterface $productRelationAction
     ) {
         $this->setConnection($connection);
         $this->setProductRelationRepository($productRelationRepository);
@@ -151,11 +151,11 @@ class ProductGroupedProcessor implements ProductGroupedProcessorInterface
     /**
      * Set's the action with the product relation CRUD methods.
      *
-     * @param \TechDivision\Import\Product\Actions\ProductRelationActionInterface $productRelationAction The action with the product relation CRUD methods
+     * @param \TechDivision\Import\Actions\ActionInterface $productRelationAction The action with the product relation CRUD methods
      *
      * @return void
      */
-    public function setProductRelationAction(ProductRelationActionInterface $productRelationAction)
+    public function setProductRelationAction(ActionInterface $productRelationAction)
     {
         $this->productRelationAction = $productRelationAction;
     }
@@ -163,7 +163,7 @@ class ProductGroupedProcessor implements ProductGroupedProcessorInterface
     /**
      * Return's the action with the product relation CRUD methods.
      *
-     * @return \TechDivision\Import\Product\Actions\ProductRelationActionInterface The action instance
+     * @return \TechDivision\Import\Actions\ActionInterface The action instance
      */
     public function getProductRelationAction()
     {
