@@ -1,3 +1,13 @@
+# Version 6.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Switch to latest techdivision/import-product-link 12.0.* version as dependency
+
 # Version 5.0.0
 
 ## Bugfixes
