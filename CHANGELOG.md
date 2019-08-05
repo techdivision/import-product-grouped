@@ -1,3 +1,14 @@
+# Version 9.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Switch to latest techdivision/import-product-link 15.* version as dependency
+* Refactor subject implementation, extend from AbstractProductSubject instead of LinkSubject
+
 # Version 8.0.0
 
 ## Bugfixes
