@@ -1,3 +1,13 @@
+# Version 11.0.0
+
+## Bugfixes
+
+* None
+
+## Features
+
+* Switch to latest techdivision/import-product-link 17.* version as dependency
+
 # Version 10.0.0
 
 ## Bugfixes
