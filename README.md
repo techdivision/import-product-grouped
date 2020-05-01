@@ -6,6 +6,4 @@
  [![Build Status](https://img.shields.io/travis/techdivision/import-product-grouped/master.svg?style=flat-square)](http://travis-ci.org/techdivision/import-product-grouped)
  [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/techdivision/import-product-grouped/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/techdivision/import-product-grouped/?branch=master) [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/techdivision/import-product-grouped/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/techdivision/import-product-grouped/?branch=master)
 
- ## Introduction
-
- TBD
+Please visit the M2IF [website](https://m2if.com) for documentation and additional information
