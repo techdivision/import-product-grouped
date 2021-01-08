@@ -20,8 +20,8 @@
 
 namespace TechDivision\Import\Product\Grouped\Services;
 
-use TechDivision\Import\Actions\ActionInterface;
-use TechDivision\Import\Connection\ConnectionInterface;
+use TechDivision\Import\Dbal\Actions\ActionInterface;
+use TechDivision\Import\Dbal\Connection\ConnectionInterface;
 use TechDivision\Import\Product\Repositories\ProductRelationRepositoryInterface;
 
 /**
@@ -39,16 +39,16 @@ class ProductGroupedProcessor implements ProductGroupedProcessorInterface
     /**
      * A PDO connection initialized with the values from the Doctrine EntityManager.
      *
-     * @var \TechDivision\Import\Connection\ConnectionInterface
+     * @var \TechDivision\Import\Dbal\Connection\ConnectionInterface
      */
     protected $connection;
 
     /**
      * Initialize the processor with the necessary assembler and repository instances.
      *
-     * @param \TechDivision\Import\Connection\ConnectionInterface                          $connection                The connection to use
+     * @param \TechDivision\Import\Dbal\Connection\ConnectionInterface                     $connection                The connection to use
      * @param \TechDivision\Import\Product\Repositories\ProductRelationRepositoryInterface $productRelationRepository The product relation repository to use
-     * @param \TechDivision\Import\Actions\ActionInterface                                 $productRelationAction     The product relation action to use
+     * @param \TechDivision\Import\Dbal\Actions\ActionInterface                            $productRelationAction     The product relation action to use
      */
     public function __construct(
         ConnectionInterface $connection,
@@ -63,7 +63,7 @@ class ProductGroupedProcessor implements ProductGroupedProcessorInterface
     /**
      * Set's the passed connection.
      *
-     * @param \TechDivision\Import\Connection\ConnectionInterface $connection The connection to set
+     * @param \TechDivision\Import\Dbal\Connection\ConnectionInterface $connection The connection to set
      *
      * @return void
      */
@@ -75,7 +75,7 @@ class ProductGroupedProcessor implements ProductGroupedProcessorInterface
     /**
      * Return's the connection.
      *
-     * @return \TechDivision\Import\Connection\ConnectionInterface The connection instance
+     * @return \TechDivision\Import\Dbal\Connection\ConnectionInterface The connection instance
      */
     public function getConnection()
     {
@@ -151,7 +151,7 @@ class ProductGroupedProcessor implements ProductGroupedProcessorInterface
     /**
      * Set's the action with the product relation CRUD methods.
      *
-     * @param \TechDivision\Import\Actions\ActionInterface $productRelationAction The action with the product relation CRUD methods
+     * @param \TechDivision\Import\Dbal\Actions\ActionInterface $productRelationAction The action with the product relation CRUD methods
      *
      * @return void
      */
@@ -163,7 +163,7 @@ class ProductGroupedProcessor implements ProductGroupedProcessorInterface
     /**
      * Return's the action with the product relation CRUD methods.
      *
-     * @return \TechDivision\Import\Actions\ActionInterface The action instance
+     * @return \TechDivision\Import\Dbal\Actions\ActionInterface The action instance
      */
     public function getProductRelationAction()
     {
