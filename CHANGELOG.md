@@ -7,6 +7,7 @@
 ## Features
 
 * Switch to latest techdivision/import-product-link 24.* version as dependency
+* PAC-541: Update composer with php Version ">=^7.3"
 
 # Version 17.0.0
 
