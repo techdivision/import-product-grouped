@@ -36,6 +36,10 @@
             <argument type="string">%import_product_grouped.param.sku.column.name%</argument>
         </service>
 
+        <service id="import_product_grouped.observer.clean.up.product.grouped" class="TechDivision\Import\Product\Grouped\Observers\CleanUpGroupedProductRelationsObserver">
+            <argument type="service" id="import_product_grouped.processor.product.grouped"/>
+        </service>
+
         <!--
          | The DI configuration for the composite observers of the replace operation.
          |-->
