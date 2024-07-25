@@ -17,7 +17,7 @@ use Exception;
 use TechDivision\Import\Observers\StateDetectorInterface;
 use TechDivision\Import\Product\Grouped\Services\ProductGroupedProcessorInterface;
 use TechDivision\Import\Product\Grouped\Utils\ColumnKeys;
-use TechDivision\Import\Product\Grouped\Utils\ConfigurationKeys;
+use TechDivision\Import\Product\Utils\ConfigurationKeys;
 use TechDivision\Import\Product\Utils\MemberNames;
 use TechDivision\Import\Product\Grouped\Utils\ProductTypes;
 use TechDivision\Import\Product\Observers\AbstractProductImportObserver;
@@ -78,8 +78,8 @@ class CleanUpGroupedProductRelationObserver extends AbstractProductImportObserve
         $subject = $this->getSubject();
         $subjectConfiguration = $subject->getConfiguration();
 
-        if ($subjectConfiguration->hasParam(ConfigurationKeys::CLEAN_UP_GROUPED)
-            && $subjectConfiguration->getParam(ConfigurationKeys::CLEAN_UP_GROUPED)) {
+        if ($subjectConfiguration->hasParam(ConfigurationKeys::CLEAN_UP_LINKS)
+            && $subjectConfiguration->getParam(ConfigurationKeys::CLEAN_UP_LINKS)) {
             $this->cleanUpGrouped();
 
             $subject->getSystemLogger()->info(
