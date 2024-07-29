@@ -1,3 +1,19 @@
+# Version 20.0.1
+
+## Bugfixes
+
+* refactoring clean-up-links and clean-up-variants to remove old data from relation table
+
+# Version 20.0.0
+
+## Features
+
+### PHP 8.1 Compatibility
+
+* Update dependencies
+* Add PHP ">=8.1" support
+* Remove PHP 7.3 support
+
 # Version 19.0.0
 
 ## Bugfixes
