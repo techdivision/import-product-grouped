@@ -9,10 +9,32 @@
 
     <services>
 
+        <!--
+         | The DI configuration for the entity mergers
+         |-->
+        <service id="import_product_grouped.repository.sql.statement" class="TechDivision\Import\Product\Grouped\Repositories\SqlStatementRepository">
+            <argument type="service" id="import.util.sql.compilers"/>
+        </service>
+
+        <!--
+         | The DI action processor configuration
+         |-->
+        <service id="import_product_grouped.action.processor.product.relation.delete" class="TechDivision\Import\Product\Grouped\Actions\Processors\ProductRelationDeleteProcessor">
+            <argument type="service" id="connection"/>
+            <argument type="service" id="import_product_grouped.repository.sql.statement"/>
+            <argument type="service" id="import.util.sql.sanitizers"/>
+        </service>
+
+        <service id="import_product.action.product.relation.grouped" class="TechDivision\Import\Dbal\Collection\Actions\GenericAction">
+            <argument type="service" id="import_product.action.processor.product.relation.create"/>
+            <argument type="service" id="import_product.action.processor.product.relation.update" on-invalid="ignore"/>
+            <argument type="service" id="import_product_grouped.action.processor.product.relation.delete"/>
+        </service>
+
         <service id="import_product_grouped.processor.product.grouped" class="TechDivision\Import\Product\Grouped\Services\ProductGroupedProcessor">
             <argument type="service" id="connection"/>
             <argument type="service" id="import_product.repository.product.relation"/>
-            <argument type="service" id="import_product.action.product.relation"/>
+            <argument type="service" id="import_product.action.product.relation.grouped"/>
         </service>
 
         <service id="import_product_grouped.observer.product.grouped" class="TechDivision\Import\Product\Grouped\Observers\ProductGroupedObserver"/>
@@ -34,6 +56,9 @@
         <service id="import_product_grouped.observer.sku.entity.id.mapping" class="TechDivision\Import\Product\Observers\GenericSkuEntityIdMappingObserver">
             <argument type="service" id="import_product.processor.product.bunch"/>
             <argument type="string">%import_product_grouped.param.sku.column.name%</argument>
+        </service>
+        <service id="import_product_grouped.observer.clean.up.product.grouped" class="TechDivision\Import\Product\Grouped\Observers\CleanUpGroupedProductRelationObserver">
+            <argument type="service" id="import_product_grouped.processor.product.grouped"/>
         </service>
 
         <!--

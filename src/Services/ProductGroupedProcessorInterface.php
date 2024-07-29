@@ -28,4 +28,13 @@ use TechDivision\Import\Product\Services\ProductRelationAwareProcessorInterface;
  */
 interface ProductGroupedProcessorInterface extends ProductProcessorInterface, ProductRelationAwareProcessorInterface
 {
+    /**
+     * Deletes the passed product relation data.
+     *
+     * @param array $row The product relation to be deleted
+     * @param null|string $name The name of the prepared statement that has to be executed
+     *
+     * @return void
+     */
+    public function deleteProductRelation(array $row, string $name = null): void;
 }

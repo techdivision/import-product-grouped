@@ -38,6 +38,20 @@ class ProductGroupedProcessor implements ProductGroupedProcessorInterface
     protected $connection;
 
     /**
+     * The repository to access product relations.
+     *
+     * @var \TechDivision\Import\Product\Repositories\ProductRelationRepositoryInterface
+     */
+    protected $productRelationRepository;
+
+    /**
+     * The action for product relation CRUD methods.
+     *
+     * @var \TechDivision\Import\Dbal\Actions\ActionInterface
+     */
+    protected $productRelationAction;
+
+    /**
      * Initialize the processor with the necessary assembler and repository instances.
      *
      * @param \TechDivision\Import\Dbal\Connection\ConnectionInterface                     $connection                The connection to use
@@ -188,5 +202,18 @@ class ProductGroupedProcessor implements ProductGroupedProcessorInterface
     public function persistProductRelation($productRelation, $name = null)
     {
         return $this->getProductRelationAction()->persist($productRelation, $name);
+    }
+
+    /**
+     * Deletes the passed product relation data.
+     *
+     * @param array $row The product relation to be deleted
+     * @param string|null $name The name of the prepared statement that has to be executed
+     *
+     * @return void
+     */
+    public function deleteProductRelation(array $row, string $name = null): void
+    {
+        $this->getProductRelationAction()->delete($row, $name);
     }
 }
