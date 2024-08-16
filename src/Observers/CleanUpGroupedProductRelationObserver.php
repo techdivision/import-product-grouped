@@ -191,6 +191,6 @@ class CleanUpGroupedProductRelationObserver extends AbstractProductImportObserve
      */
     protected function getLastPrimaryKey(): int
     {
-        return (int)$this->getLastEntityId();
+        return $this->getLastEntityId();
     }
 }
