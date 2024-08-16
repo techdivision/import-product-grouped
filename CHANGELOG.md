@@ -1,9 +1,3 @@
-# Version 20.0.2
-
-## Bugfixes
-
-* fixing typing error
-
 # Version 20.0.1
 
 ## Bugfixes
