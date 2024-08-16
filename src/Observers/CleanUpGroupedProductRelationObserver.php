@@ -189,8 +189,8 @@ class CleanUpGroupedProductRelationObserver extends AbstractProductImportObserve
      *
      * @return int The PK to create the relation with
      */
-    protected function getLastPrimaryKey(): int
+    protected function getLastPrimaryKey()
     {
-        return (int)$this->getLastEntityId();
+        return $this->getLastEntityId();
     }
 }
