@@ -1,3 +1,9 @@
+# Version 19.0.2
+
+## Bugfixes
+
+* fixing typing error
+
 # Version 19.0.1
 
 ## Bugfixes
