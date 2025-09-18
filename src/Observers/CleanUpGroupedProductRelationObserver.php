@@ -42,7 +42,7 @@ class CleanUpGroupedProductRelationObserver extends AbstractProductImportObserve
      */
     public function __construct(
         ProductGroupedProcessorInterface $productGroupedProcessor,
-        StateDetectorInterface $stateDetector = null
+        ?StateDetectorInterface $stateDetector = null
     ) {
         // pass the state detector to the parent constructor
         parent::__construct($stateDetector);

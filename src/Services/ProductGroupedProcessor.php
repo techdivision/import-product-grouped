@@ -212,7 +212,7 @@ class ProductGroupedProcessor implements ProductGroupedProcessorInterface
      *
      * @return void
      */
-    public function deleteProductRelation(array $row, string $name = null): void
+    public function deleteProductRelation(array $row, ?string $name = null): void
     {
         $this->getProductRelationAction()->delete($row, $name);
     }
