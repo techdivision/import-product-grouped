@@ -32,9 +32,9 @@ interface ProductGroupedProcessorInterface extends ProductProcessorInterface, Pr
      * Deletes the passed product relation data.
      *
      * @param array $row The product relation to be deleted
-     * @param null|string $name The name of the prepared statement that has to be executed
+     * @param string|null $name The name of the prepared statement that has to be executed
      *
      * @return void
      */
-    public function deleteProductRelation(array $row, string $name = null): void;
+    public function deleteProductRelation(array $row, ?string $name = null): void;
 }

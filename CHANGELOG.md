@@ -1,3 +1,11 @@
+# Version 20.1.0
+
+## Features
+
+### PHP 8.4 Compatibility
+
+* Add PHP 8.4 support
+
 # Version 20.0.1
 
 ## Bugfixes
